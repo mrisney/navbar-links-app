@@ -160,8 +160,8 @@ export class AppRoutingModule { }
 <a name="update-app-component"></a>
 #### Change the default app.component.html in our Angular App
 
-The next step is to change the default page in our Angular app to incorporate the routing that we have setup
-Lets edit the app.component.html and replace with the following code.
+The next step is to change the default page in our Angular App to incorporate the routing that we have setup.
+Lets edit the app.component.html file and replace with the following code.
 
 #### `app.component.html`
 ```markup
