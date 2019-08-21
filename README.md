@@ -111,13 +111,13 @@ Start your project using given below command. Notice that by adding the paramete
 ng serve --open
 ```
 
-Lets create Angulatr components to modularize this application, using Angular CLI shorthand, lets generate the components that we will use in this application. ng g c {component name} is shorthand for the same command
+Lets create Angular components to modularize this application, using Angular CLI shorthand, lets generate the components that we will use in this application. ng g c {component name} is shorthand for the same command
 
 ```bash
  ng generate component {component name}
 ```
 
-So using shorthand, lets create the four components we will use in this application.
+So using shorthand, lets create the components we will use in this application.
 
 ```bash
 ng g c link-create
