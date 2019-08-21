@@ -28,6 +28,12 @@ By the end of this tutorial, we will have covered…
 
 - How to make GET, POST, PUT & DELETE request with Angular using HttpClient API
 
+##### Table of Contents 
+
+1. [ Prerequisites. ](#prerequisites)
+2. [ Install Angular CLI ](#install-angular-cli)
+
+<a name="prerequisites"></a>
 
 #### 1. Prerequisites
 
@@ -37,6 +43,7 @@ In order to create this demo app you must have **Node JS development environment
 
 Please follow this link [How to Set up Node JS Development Environment?](https://nodejs.org/en/download/)
 
+<a name="install-angular-cli"></a>
 #### 2. Install Angular CLI
 
 
