@@ -3,25 +3,24 @@ import { Router } from '@angular/router';
 import { RestApiService } from '../shared/rest-api.service';
 
 @Component({
-  selector: 'app-link-create',
-  templateUrl: './link-create.component.html',
-  styleUrls: ['./link-create.component.css']
+    selector: 'app-link-create',
+    templateUrl: './link-create.component.html',
+    styleUrls: ['./link-create.component.css']
 })
 export class LinkCreateComponent implements OnInit {
 
-  @Input() linkDetails = { title: '', url: ''}
+    @Input() linkDetails = { title: '', url: '' }
 
-  constructor(
-    public restApi: RestApiService, 
-    public router: Router
-  ) { }
+    constructor(
+        public restApi: RestApiService,
+        public router: Router
+    ) { }
 
-  ngOnInit() { }
+    ngOnInit() { }
 
-  addLink(dataLink) {
-    this.restApi.createLink(this.linkDetails).subscribe((data: {}) => {
-      this.router.navigate(['/links-list'])
-    })
-  }
-
+    addLink(dataLink) {
+        this.restApi.createLink(this.linkDetails).subscribe((data: {}) => {
+            this.router.navigate(['/links-list'])
+        })
+    }
 }

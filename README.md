@@ -137,7 +137,6 @@ ng g c links-list
 For navigating between components in Angular  we need to activate routing service in our applicaiton, to do that visit `app-routing.module.ts` file and include the given below code.
 
 ```bash
-
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LinkCreateComponent } from './link-create/link-create.component';
@@ -145,19 +144,18 @@ import { LinkEditComponent } from './link-edit/link-edit.component';
 import { LinksListComponent } from './links-list/links-list.component';
 
 const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: 'create-link' },
-  { path: 'create-link', component: LinkCreateComponent },
-  { path: 'links-list', component: LinksListComponent },
-  { path: 'link-edit/:id', component: LinkEditComponent }  
+    { path: '', pathMatch: 'full', redirectTo: 'create-link' },
+    { path: 'create-link', component: LinkCreateComponent },
+    { path: 'links-list', component: LinksListComponent },
+    { path: 'link-edit/:id', component: LinkEditComponent }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+    imports: [RouterModule.forRoot(routes)],
+    exports: [RouterModule]
 })
 
 export class AppRoutingModule { }
-
 ```
 
 <a name="setup-json-server"></a>
@@ -250,20 +248,20 @@ import { LinkEditComponent } from './link-edit/link-edit.component';
 import { LinksListComponent } from './links-list/links-list.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    LinkCreateComponent,
-    LinkEditComponent,
-    LinksListComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    FormsModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        LinkCreateComponent,
+        LinkEditComponent,
+        LinksListComponent
+    ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        FormsModule
+    ],
+    providers: [],
+    bootstrap: [AppComponent]
 })
 
 export class AppModule { }
@@ -318,87 +316,86 @@ import { Observable, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root'
 })
 
 export class RestApiService {
-  
-  // Define API
-  apiURL = 'http://localhost:3000';
 
-  constructor(private http: HttpClient) { }
+    // Define API
+    apiURL = 'http://localhost:3000';
 
-  /*========================================
-    CRUD Methods for consuming RESTful API
-  =========================================*/
-  // Http Options
-  httpOptions = {
-    headers: new HttpHeaders({
-      'Content-Type': 'application/json'
-    })
-  }  
+    constructor(private http: HttpClient) { }
 
-  // HttpClient API get() method => Fetch links list
-  getLinks(): Observable<Link> {
-    return this.http.get<Link>(this.apiURL + '/links')
-    .pipe(
-      retry(1),
-      catchError(this.handleError)
-    )
-  }
+    /*========================================
+      CRUD Methods for consuming RESTful API
+    =========================================*/
 
-  // HttpClient API get() method => Fetch link
-  getLink(id): Observable<Link> {
-    return this.http.get<Link>(this.apiURL + '/links/' + id)
-    .pipe(
-      retry(1),
-      catchError(this.handleError)
-    )
-  }  
+    // Http Options
+    httpOptions = {
+        headers: new HttpHeaders({
+            'Content-Type': 'application/json'
+        })
+    }
 
-  // HttpClient API post() method => Create link
-  createLink(link): Observable<Link> {
-    return this.http.post<Link>(this.apiURL + '/links', JSON.stringify(link), this.httpOptions)
-    .pipe(
-      retry(1),
-      catchError(this.handleError)
-    )
-  }  
+    // HttpClient API get() method => Fetch links list
+    getLinks(): Observable<Link> {
+        return this.http.get<Link>(this.apiURL + '/links')
+            .pipe(
+                retry(1),
+                catchError(this.handleError)
+            )
+    }
 
-  // HttpClient API put() method => Update link
-  updateLink(id, link): Observable<Link> {
-    return this.http.put<Link>(this.apiURL + '/links/' + id, JSON.stringify(link), this.httpOptions)
-    .pipe(
-      retry(1),
-      catchError(this.handleError)
-    )
-  }
+    // HttpClient API get() method => Fetch link
+    getLink(id): Observable<Link> {
+        return this.http.get<Link>(this.apiURL + '/links/' + id)
+            .pipe(
+                retry(1),
+                catchError(this.handleError)
+            )
+    }
 
-  // HttpClient API delete() method => Delete employee
-  deleteLink(id){
-    return this.http.delete<Link>(this.apiURL + '/links/' + id, this.httpOptions)
-    .pipe(
-      retry(1),
-      catchError(this.handleError)
-    )
-  }
+    // HttpClient API post() method => Create link
+    createLink(link): Observable<Link> {
+        return this.http.post<Link>(this.apiURL + '/links', JSON.stringify(link), this.httpOptions)
+            .pipe(
+                retry(1),
+                catchError(this.handleError)
+            )
+    }
 
-  // Error handling 
-  handleError(error) {
-     let errorMessage = '';
-     if(error.error instanceof ErrorEvent) {
-       // Get client-side error
-       errorMessage = error.error.message;
-     } else {
-       // Get server-side error
-       errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
-     }
-     window.alert(errorMessage);
-     return throwError(errorMessage);
-  }
+    // HttpClient API put() method => Update link
+    updateLink(id, link): Observable<Link> {
+        return this.http.put<Link>(this.apiURL + '/links/' + id, JSON.stringify(link), this.httpOptions)
+            .pipe(
+                retry(1),
+                catchError(this.handleError)
+            )
+    }
 
+    // HttpClient API delete() method => Delete employee
+    deleteLink(id) {
+        return this.http.delete<Link>(this.apiURL + '/links/' + id, this.httpOptions)
+            .pipe(
+                retry(1),
+                catchError(this.handleError)
+            )
+    }
+
+    // Error handling 
+    handleError(error) {
+        let errorMessage = '';
+        if (error.error instanceof ErrorEvent) {
+            // Get client-side error
+            errorMessage = error.error.message;
+        } else {
+            // Get server-side error
+            errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
+        }
+        window.alert(errorMessage);
+        return throwError(errorMessage);
+    }
 }
-
 ```
 <a name="access-json-rest"></a>
 #### 8. Access JSON REST, using HttpClient API from our Angular component
@@ -426,20 +423,20 @@ import { LinkEditComponent } from './link-edit/link-edit.component';
 import { LinksListComponent } from './links-list/links-list.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    LinkCreateComponent,
-    LinkEditComponent,
-    LinksListComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    FormsModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        LinkCreateComponent,
+        LinkEditComponent,
+        LinksListComponent
+    ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        FormsModule
+    ],
+    providers: [],
+    bootstrap: [AppComponent]
 })
 
 export class AppModule { }
@@ -473,30 +470,29 @@ Go to  `link-create.component.ts`  file and add the following code.
 ```typescript
 import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
-import { RestApiService } from "../shared/rest-api.service";
+import { RestApiService } from '../shared/rest-api.service';
 
 @Component({
-  selector: 'app-link-create',
-  templateUrl: './link-create.component.html',
-  styleUrls: ['./link-create.component.css']
+    selector: 'app-link-create',
+    templateUrl: './link-create.component.html',
+    styleUrls: ['./link-create.component.css']
 })
 export class LinkCreateComponent implements OnInit {
 
-  @Input() linkDetails = { title: '', url: '' }
+    @Input() linkDetails = { title: '', url: '' }
 
-  constructor(
-    public restApi: RestApiService,
-    public router: Router
-  ) { }
+    constructor(
+        public restApi: RestApiService,
+        public router: Router
+    ) { }
 
-  ngOnInit() { }
+    ngOnInit() { }
 
-  addLink(dataLink) {
-    this.restApi.createLink(this.linkDetails).subscribe((data: {}) => {
-      this.router.navigate(['/links-list'])
-    })
-  }
-
+    addLink(dataLink) {
+        this.restApi.createLink(this.linkDetails).subscribe((data: {}) => {
+            this.router.navigate(['/links-list'])
+        })
+    }
 }
 ```
 By adding the above code in  *link create*  component, we have the ability  to create a Link by making an HTTP POST request via Angular  component.
@@ -508,40 +504,41 @@ We are now at a point where we want to create the functionality  to manage Links
 #### `links-list.component.ts`
 
 ```typescript
-import { Component, OnInit } from  '@angular/core';
-import { RestApiService } from  '../shared/rest-api.service';
+import { Component, OnInit } from '@angular/core';
+import { RestApiService } from '../shared/rest-api.service';
 
 @Component({
-	selector:  'app-links-list',
-	templateUrl:  './links-list.component.html',
-	styleUrls: ['./links-list.component.css']
+    selector: 'app-links-list',
+    templateUrl: './links-list.component.html',
+    styleUrls: ['./links-list.component.css']
 })
-export  class  LinksListComponent  implements  OnInit {
-Link:  any  = [];
+export class LinksListComponent implements OnInit {
 
-constructor(
-	public  restApi:  RestApiService
-) { }
+    Link: any = [];
 
-ngOnInit() {
-   this.loadLinks()
-}
-// Get links list
+    constructor(
+        public restApi: RestApiService
+    ) { }
 
-loadLinks() {
-return  this.restApi.getLinks().subscribe((data: {}) => {
-this.Link = data;
-})
+    ngOnInit() {
+        this.loadLinks()
+    }
 
-}
-// Delete link
-deleteLink(id) {
-	if (window.confirm('Are you sure, you want to delete?')){
-			this.restApi.deleteLink(id).subscribe(data  => {
-				this.loadLinks()
-			})
-		}
-	}
+    // Get links list
+    loadLinks() {
+        return this.restApi.getLinks().subscribe((data: {}) => {
+            this.Link = data;
+        })
+    }
+
+    // Delete link
+    deleteLink(id) {
+        if (window.confirm('Are you sure, you want to delete?')) {
+            this.restApi.deleteLink(id).subscribe(data => {
+                this.loadLinks()
+            })
+        }
+    }
 }
 ```
 
@@ -595,39 +592,39 @@ We are now going to use an HTTP PUT Request in out application to update Link da
 
 ```typescript
 import { Component, OnInit } from '@angular/core';
-import { RestApiService } from "../shared/rest-api.service";
+import { RestApiService } from '../shared/rest-api.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
-  selector: 'app-link-details',
-  templateUrl: './link-edit.component.html',
-  styleUrls: ['./link-edit.component.css']
+    selector: 'app-link-details',
+    templateUrl: './link-edit.component.html',
+    styleUrls: ['./link-edit.component.css']
 })
 
 export class LinkEditComponent implements OnInit {
-  id = this.actRoute.snapshot.params['id'];
-  linkData: any = {};
+    id = this.actRoute.snapshot.params['id'];
+    linkData: any = {};
 
-  constructor(
-    public restApi: RestApiService,
-    public actRoute: ActivatedRoute,
-    public router: Router
-  ) { }
+    constructor(
+        public restApi: RestApiService,
+        public actRoute: ActivatedRoute,
+        public router: Router
+    ) { }
 
-  ngOnInit() {
-    this.restApi.getLink(this.id).subscribe((data: {}) => {
-      this.linkData = data;
-    })
-  }
-
-  // Update link data
-  updateLink() {
-    if(window.confirm('Are you sure, you want to update?')){
-      this.restApi.updateLink(this.id, this.linkData).subscribe(data => {
-        this.router.navigate(['/links-list'])
-      })
+    ngOnInit() {
+        this.restApi.getLink(this.id).subscribe((data: {}) => {
+            this.linkData = data;
+        })
     }
-  }
+
+    // Update link data
+    updateLink() {
+        if (window.confirm('Are you sure, you want to update?')) {
+            this.restApi.updateLink(this.id, this.linkData).subscribe(data => {
+                this.router.navigate(['/links-list'])
+            })
+        }
+    }
 }
 ```
 
