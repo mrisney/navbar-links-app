@@ -32,14 +32,14 @@ By the end of this tutorial, we will have covered…
 
 1. [ Prerequisites. ](#prerequisites)
 2. [ Install Angular CLI ](#install-angular-cli)
-3. [ How to set up our Angular Project using Angular CLI from scratch ](#installing-app")
+3. [ How to set up our Angular project using Angular CLI from scratch ](#installing-app)
 4. [ Setting up routing for this project ](#setup-routing")
-5. [ How to Set up a JSON Server in Angular project using NPM package ](#setup-json-server")
-6. [ How to Set up HttpClient API in our Angular App for REST consumption ](#setup-http-client")
-7. [ How to Create Angular Service for consuming RESTful API using Angular HttpClient service ](#setup-rest-service")
-8. [ Access JSON REST, using HttpClient API from our Angular component ](#access-json-rest")
-9. [ Using HTTP GET and DELETE Requests to manage Links List ](#use-get-delete")
-10. [ Using HTTP PUT Request in to Edit/Update the Link Data ](#use-put-edit")
+5. [ How to Set up a JSON Server in our Angular project using NPM package ](#setup-json-server)
+6. [ How to Set up HttpClient API in our Angular App for REST consumption ](#setup-http-client)
+7. [ How to Create Angular Service for consuming REST API's using Angular HttpClient service ](#setup-rest-service)
+8. [ Access JSON REST, using HttpClient API from our Angular component ](#access-json-rest)
+9. [ Using HTTP GET and DELETE Requests to manage Links List ](#use-get-delete)
+10. [ Using HTTP PUT Request in to Edit/Update the Link Data ](#use-put-edit)
 
 
 
@@ -165,7 +165,7 @@ export class AppRoutingModule { }
 ```
 
 <a name="setup-json-server"></a>
-#### 5. How to Set up a JSON Server in Angular project using NPM package
+#### 5. How to Set up a JSON Server in our Angular project using NPM package
 
 We are going to create a development server for testing out the ability to user the JSON Signature Angular app, so we will be using [json-server](https://www.npmjs.com/package/json-server) NPM package to both present JSON and allow REST methods against a JSON File. Simpler than our Spring server, and handy for testing and development
 
@@ -273,7 +273,7 @@ export class AppModule { }
 We have injected the **HttpClientModule** into our application, now we can use it in our Angular application.
 
 <a name="setup-rest-service"></a>
-#### 7. How to Create Angular Service for consuming RESTful API using Angular HttpClient service
+#### 7. How to Create Angular Service for consuming REST API's using Angular HttpClient service
 
 In order to consume a REST API using Angular HttpClient service we need to create a service file in our app. This file will hold the core logic of our demo application.
 
