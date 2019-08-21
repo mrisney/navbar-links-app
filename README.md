@@ -281,7 +281,7 @@ In order to consume a REST API using Angular HttpClient service we need to creat
 -  `Delete Link`
 -  `Edit Link`
 -  `Manage Links List`
-In order to create CRUD operations using RESTful API in Angular 7, we need to generate `link.ts` class and `rest-api.service.ts` files.
+In order to create CRUD operations using REST API's in Angular, we need to generate `link.ts` class and `rest-api.service.ts` files.
 
 #### Generate Link Interface Class
 
@@ -402,9 +402,9 @@ export class RestApiService {
 ```
 <a name="access-json-rest"></a>
 #### 8. Access JSON REST, using HttpClient API from our Angular component
-We’ve successfully created RESTful services using Angualr 7 HttpClient API, its time to access rest-api.service.ts via Angular 7 components.
+We’ve successfully created TypeScript methhods that abstract the REST services using Angular HttpClient API, its time to access rest-api.service.ts via Angular components.
 
-Go to your app.module.ts file and add the following code, this file holds the core services to run our demo app.
+Go to the app.module.ts file and add the following code, this file holds the core services to run the demo app.
 
 ```typescript
 import { BrowserModule } from '@angular/platform-browser';
