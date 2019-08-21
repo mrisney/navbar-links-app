@@ -1,0 +1,36 @@
+<div class="container custom-container-2">
+  <!-- Show it when there is no link -->
+  <div class="no-data text-center" *ngIf="Link.length == 0">
+    <p>There is no link added yet!</p>
+    <button class="btn btn-outline-primary" routerLink="/create-link">Add Link</button>
+  </div>
+
+  <!-- Links list table, hidden when there are no links -->
+  <div *ngIf="Link.length !== 0">
+    <h3 class="mb-3 text-center">Globak Navigation Links List</h3>
+
+    <div class="col-md-12">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Title</th>
+            <th scope="col">URL</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let link of Link">
+            <td>{{link.id}}</td>
+            <td>{{link.title}}</td>
+            <td>{{link.url}}</td>
+            <td>
+              <span class="edit" routerLink="/link-edit/{{ link.id }}">Edit</span>
+              <span class="delete" (click)="deleteLink(link.id)">Delete</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
