@@ -28,7 +28,13 @@ By the end of this tutorial, we will have covered…
 
 - How to make GET, POST, PUT & DELETE request with Angular using HttpClient API
 
-#### 1. Prerequisite
+##### Table of Contents 
+
+1. [ Prerequisites. ](#prerequisites)
+2. [ Install Angular CLI ](#install-angular-cli)
+
+<a name="prerequisites"/>
+#### 1. Prerequisites
 
 ##### – Setup Node JS development environment
 
@@ -36,6 +42,7 @@ In order to create this demo app you must have **Node JS development environment
 
 Please follow this link [How to Set up Node JS Development Environment?](https://nodejs.org/en/download/)
 
+<a name="install-angular-cli"/>
 #### 2. Install Angular CLI
 
 
@@ -44,7 +51,7 @@ Angular projects are developed using Angular CLI, it's an official tool. Hit the
 ```bash
 npm install @angular/cli -g
 ```
-## 3. How to set up Angular 7 Project using Angular CLI from scratch?
+#### 3. How to set up Angular 7 Project using Angular CLI from scratch?
 
 We will be creating an Link management system with Angular, in this demo/tutoral we will consume REST services (API's) via HttpClient service.
 
@@ -70,7 +77,8 @@ After that your project will start creating. Once the project is created then do
 cd navbar-links-app
 ```
 
-For this demo, lets try  Bootstrap 4 CSS framework with Angular 7 for consuming RESTful API with HttpClient service. Type the following command to get the Bootstrap into our Angular app.
+For this demo, lets try Bootstrap 4 CSS framework, as a ready made CSS solution.
+Type the following command to get the Bootstrap into our Angular app.
 
 ```typescript
 npm install bootstrap
@@ -115,7 +123,7 @@ ng g c link-edit
 ng g c links-list
 ```
 
-## 4. Setting up routing for this project
+#### 4. Setting up routing for this project
 
 For navigating between components in Angular  we need to activate routing service in our applicaiton, to do that visit `app-routing.module.ts` file and include the given below code.
 
