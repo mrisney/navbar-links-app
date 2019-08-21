@@ -32,9 +32,18 @@ By the end of this tutorial, we will have covered…
 
 1. [ Prerequisites. ](#prerequisites)
 2. [ Install Angular CLI ](#install-angular-cli)
+3. [ How to set up our Angular Project using Angular CLI from scratch ](#installing-app")
+4. [ Setting up routing for this project ](#setup-routing")
+5. [ How to Set up a JSON Server in Angular project using NPM package ](#setup-json-server")
+6. [ How to Set up HttpClient API in our Angular App for REST consumption ](#setup-http-client")
+7. [ How to Create Angular Service for consuming RESTful API using Angular HttpClient service ](#setup-rest-service")
+8. [ Access JSON REST, using HttpClient API from our Angular component ](#access-json-rest")
+9. [ Using HTTP GET and DELETE Requests to manage Links List ](#use-get-delete")
+10. [ Using HTTP PUT Request in to Edit/Update the Link Data ](#use-put-edit")
+
+
 
 <a name="prerequisites"></a>
-
 #### 1. Prerequisites
 
 ##### – Setup Node JS development environment
@@ -52,7 +61,9 @@ Angular projects are developed using Angular CLI, it's an official tool. Hit the
 ```bash
 npm install @angular/cli -g
 ```
-#### 3. How to set up Angular 7 Project using Angular CLI from scratch?
+
+<a name="installing-app"></a>
+#### 3. How to set up our Angular Project using Angular CLI from scratch
 
 We will be creating an Link management system with Angular, in this demo/tutoral we will consume REST services (API's) via HttpClient service.
 
@@ -124,6 +135,7 @@ ng g c link-edit
 ng g c links-list
 ```
 
+<a name="setup-routing"></a>
 #### 4. Setting up routing for this project
 
 For navigating between components in Angular  we need to activate routing service in our applicaiton, to do that visit `app-routing.module.ts` file and include the given below code.
@@ -152,6 +164,7 @@ export class AppRoutingModule { }
 
 ```
 
+<a name="setup-json-server"></a>
 #### 5. How to Set up a JSON Server in Angular project using NPM package
 
 We are going to create a development server for testing out the ability to user the JSON Signature Angular app, so we will be using [json-server](https://www.npmjs.com/package/json-server) NPM package to both present JSON and allow REST methods against a JSON File. Simpler than our Spring server, and handy for testing and development
@@ -205,7 +218,8 @@ This is a nice simple solution for serving up an Object, represented as JSON, wi
 
 We could use the JSON as a representation for our eventual MicroService, without having to wait for this service to be accessible. We now have a service locally for development that does pretty much what we would expect our MicroService to eventually provide. It doesn't matter what the technology stack that serves up the JSON, it could be GoLang, Python Flask, C#, Java Spring, or even Node.js Express. The important thing is we have a JSON REST service accessible to keep going, one with which we can swap out, when it's time to provide a production grade REST endpoint.
 
-#### 6. How to Set up HttpClient API in our Angular App for REST consumption?
+<a name="setup-http-client"></a>
+#### 6. How to Set up HttpClient API in our Angular App for REST consumption
 
 Ok Cool, so we want to  access an external server to fetch JSON data using the **RESTful API in Angular with HttpClient** service. In order to use HttpClient API to make the communication with Http remote server, we could set up this service in our Angular app.
 
@@ -258,6 +272,7 @@ export class AppModule { }
 
 We have injected the **HttpClientModule** into our application, now we can use it in our Angular application.
 
+<a name="setup-rest-service"></a>
 #### 7. How to Create Angular Service for consuming RESTful API using Angular HttpClient service
 
 In order to consume a REST API using Angular HttpClient service we need to create a service file in our app. This file will hold the core logic of our demo application.
@@ -386,6 +401,7 @@ export class RestApiService {
 }
 
 ```
+<a name="access-json-rest"></a>
 #### 8. Access JSON REST, using HttpClient API from our Angular component
 We’ve successfully created RESTful services using Angualr 7 HttpClient API, its time to access rest-api.service.ts via Angular 7 components.
 
@@ -486,6 +502,7 @@ export class LinkCreateComponent implements OnInit {
 ```
 By adding the above code in  *link create*  component, we have the ability  to create a Link by making an HTTP POST request via Angular  component.
 
+<a name="use-get-delete"></a>
 #### 9.  Using HTTP GET and DELETE Requests  to manage Links List
 We are now at a point where we want to create the functionality  to manage Links list which we have created above. We will be using our REST API service by sending  `get()`  and  `delete()`  request via our custom apis.
 
@@ -570,10 +587,10 @@ deleteLink(id) {
 </div>
 ```
 
+<a name="use-put-edit"></a>
+#### 10. Using HTTP PUT Request in to Edit/Update the Link Data
 
-#### 10. Using  HTTP PUT Request in to Edit/Update the Link Data
-
-We are now going to use an  HTTP PUT Request in out application to update Link data in our app, let's perform the following steps.
+We are now going to use an HTTP PUT Request in out application to update Link data in our app, let's perform the following steps.
 
 #### `link-edit.component.ts`
 
