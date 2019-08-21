@@ -301,6 +301,11 @@ export class Link {
 Ok, lets generate the REST API Service Class
 
 ```bash
+ng generate service shared/rest-api
+```
+or 
+
+```bash
 ng g s shared/rest-api
 ```
 
