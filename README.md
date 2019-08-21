@@ -165,19 +165,22 @@ export class AppRoutingModule { }
 ```
 
 <a name="setup-json-server"></a>
-#### 5. How to Set up a JSON Server in our Angular project using NPM package
+#### 5. How to Set up a JSON Server in Angular project using NPM package
 
-We are going to create a development server for testing out the ability to user the JSON Signature Angular app, so we will be using [json-server](https://www.npmjs.com/package/json-server) NPM package to both present JSON and allow REST methods against a JSON File. Simpler than our Spring server, and handy for testing and development
+We are going to create a development server for testing out the ability to user the JSON Signature Angular app, so we will be using [json-server](https://www.npmjs.com/package/json-server) NPM package to both present JSON and allow REST methods against a JSON File. Simpler than our Spring server, and handy for testing and development. [json-server](https://github.com/typicode/json-server)  (on GitHub) has large community of users, and wide acclaim. It is an ideal tool for front-end developers who need a quick back-end for prototyping and mocking. The usage and sceanarios with which to use it, are beyond the scope of this project. However, reading through the README on GitHub or npmjs.com will give you a plethora of ways to serve up JSON data locally, and quickly.
 
-Let’s, set up a JSON server globally in our project, run the following command in Angular CLI.
+Let’s, set up a JSON server,  globally in our project, in a fairly straightforward manner.
+
+Run the following command.
 
 ```bash
 sudo npm install -g json-server
 ```
 
-Then create a folder by the name of **server** and keep your **database** file in it to manage APIs locally. In the nabber-links-app directory, along side the rest of the Angular files, lets create a server directory. Then within that directory lets touch a file, where we will put a JSON file, with which we would like to serve.
+Then create a folder by the name of **server** and keep your **database** file in it to manage APIs locally. In the navbar-links-app directory, along side the rest of the Angular files, lets create a server directory. Then within that directory lets touch a file, where we will put a JSON file, with which we would like to serve.
 
 ```bash
+cd navbar-links-app
 mkdir server
 ```
 
