@@ -284,6 +284,11 @@ In order to create CRUD operations using REST API's in Angular, we need to gener
 #### Generate Link Interface Class
 
 ```bash
+ng generate class shared/Link
+```
+or
+
+```bash
 ng g cl shared/Link
 ```
 
@@ -292,9 +297,9 @@ Go to `shared/link.ts` and define data types within the Link class.  We have pre
 
 ```typescript
 export class Link {
-	id: string;
-	title: string;
-	url: string;
+    id: string;
+    title: string;
+    url: string;
 }
 ```
 
