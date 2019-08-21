@@ -117,14 +117,10 @@ Lets create Angulatr components to modularize this application, using Angular CL
  ng generate component {component name}
 ```
 
-so using shorthand, lets create the four components we will use in this application.
+So using shorthand, lets create the four components we will use in this application.
 
 ```bash
 ng g c link-create
-```
-
-```bash
-ng g c link-details
 ```
 
 ```bash
@@ -654,4 +650,7 @@ export class LinkEditComponent implements OnInit {
 </div>
 ```
 
-Now we can test the our application in the browser, just type  `ng serve`  in the terminal. Or, we could use `ng serve --open` and force a new browser window to open, showing the http://localhost:4200 - which is typically the endpoint the Angular serves an app, while doing development.
+Now we can test the our application in the browser, just type  `ng serve`  in the terminal. 
+Or, we could use `ng serve --open` and force a new browser window to open, 
+Bringing up the URL  http://localhost:4200 
+which is typically the endpoint the Angular serves an app, while doing development.
