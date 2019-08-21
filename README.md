@@ -157,6 +157,24 @@ const routes: Routes = [
 
 export class AppRoutingModule { }
 ```
+<a name="update-app-component"></a>
+#### Change the default app.component.html in our Angular App
+
+The next step is to change the default page in our Angular app to incorporate the routing that we have setup
+Lets edit the app.component.html and replace with the following code.
+
+#### `app.component.html`
+```markup
+<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+  <h5 class="my-0 mr-md-auto font-weight-normal">Omnitracs Navigation Link Management</h5>
+  <nav class="my-2 my-md-0 mr-md-3">
+    <a class="btn btn-outline-primary" routerLinkActive="active" routerLink="/create-link">Create Link</a>
+  </nav>
+  <a class="btn btn-outline-primary" routerLinkActive="active" routerLink="/links-list">Links List</a>
+</div>
+
+<router-outlet></router-outlet>
+```
 
 <a name="setup-json-server"></a>
 #### 5. How to Set up a JSON Server in Angular project using NPM package
